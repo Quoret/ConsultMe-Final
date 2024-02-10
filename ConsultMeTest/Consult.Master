@@ -1,0 +1,196 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Consult.master.cs" Inherits="ConsultMeTest.Consult" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Consult me</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Datatable/CSS/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="Fontawesome/css/all.css" rel="stylesheet" />
+    <link href="css/CustomStyleSheet.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+
+    <!--Js links-->
+    <script src="Bootstrap/Js/jquery-3.3.1.slim.min.js"></script>
+    <script src="Bootstrap/Js/popper.min.js"></script>
+    <script src="Bootstrap/Js/bootstrap.min.js"></script>
+    <script src="Datatable/Js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+
+
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+        <script>
+            function myFunction() {
+                var dots = document.getElementById("dots");
+                var moreText = document.getElementById("more");
+                var btnText = document.getElementById("myBtn");
+
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less";
+                    moreText.style.display = "inline";
+                }
+            }  
+        </script>
+
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <!-- Navigation section -->
+
+        <div class="header_section">
+            <div class="container-fluid">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="Homepage.aspx">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="About.aspx">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="What-we.aspx">What we do</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Blog.aspx">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Contact-us.aspx">Contact Us</a>
+                            </li>
+                        </ul>
+
+
+                        <ul class="navbar-nav">
+
+
+                            <li class="nav-item active">
+                                <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="client_Login" runat="server" OnClick="client_Login_Click">Client Login</asp:LinkButton>
+                            </li>
+                            <li class="nav-item active">
+                                <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="lawyer_login" runat="server" OnClick="lawyer_login_Click">lawyer Login</asp:LinkButton>
+                            </li>
+
+                            <li class="nav-item active">
+                                <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="Logout" runat="server" Visible="False" OnClick="Logout_Click">Logout</asp:LinkButton>
+                            </li>
+                            <li class="nav-item active">
+
+                                <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="UpdateProfile" runat="server" Visible="False" OnClick="UpdateProfile_Click">Profile</asp:LinkButton>
+
+                            </li>
+
+                            <li class="nav-item active">
+                                <asp:LinkButton CssClass="nav-link btn btn-outline-dark p-1 text-dark font-weight-bold" ID="Hello" runat="server" Visible="False">Hello user</asp:LinkButton>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Navigation section ends -->
+        <!-- main content section-->
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!--main content section ends-->
+
+        <!-- footer section start -->
+        <footer>
+            <div class="footer_section layout_padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="location_text">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer_logo">
+                            <a href="index.html"></a>
+                        </div>
+                        <div class="social_icon">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer section end -->
+            <!-- copyright section start -->
+            <div class="copyright_section">
+                <div class="container">
+                    <p class="copyright_text">&copy 2024 All Rights Reserved.Consult Me</p>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+</body>
+</html>
