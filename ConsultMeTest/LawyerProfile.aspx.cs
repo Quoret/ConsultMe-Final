@@ -74,7 +74,7 @@ namespace ConsultMeTest
                 cmd.Parameters.AddWithValue("@FirmName", Firm_name.Text.Trim());//12               
                 cmd.Parameters.AddWithValue("@Address", Office_Address.Text.Trim());//14
                 cmd.Parameters.AddWithValue("@CaseCount", Case_count.Text.Trim());//15
-                cmd.Parameters.AddWithValue("@CaseWon", Case_won.Text.Trim());//16
+                cmd.Parameters.AddWithValue("@ConsultingFee", ConsultingFee.Text.Trim());//16
                 cmd.Parameters.AddWithValue("@AvailableDate", Available_date.Text.Trim());//17
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -198,7 +198,7 @@ namespace ConsultMeTest
                         cmd.Parameters.AddWithValue("@FirmName", Firm_name.Text.Trim());//12               
                         cmd.Parameters.AddWithValue("@Address", Office_Address.Text.Trim());//14
                         cmd.Parameters.AddWithValue("@CaseCount", Case_count.Text.Trim());//15
-                        cmd.Parameters.AddWithValue("@CaseWon", Case_won.Text.Trim());//16
+                        cmd.Parameters.AddWithValue("@ConsultingFee", ConsultingFee.Text.Trim());//16
                         cmd.Parameters.AddWithValue("@AvailableDate", Available_date.Text.Trim());//17
                         cmd.ExecuteNonQuery();
                         con.Close();

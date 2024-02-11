@@ -2230,7 +2230,9 @@
     <Content Include="Styles\style.css" />
     <Content Include="Styles\style2.css" />
     <Content Include="Styles\style3.css" />
+    <Content Include="UserFeedback.aspx" />
     <Content Include="UserRegistration.aspx" />
+    <Content Include="UserRequirement.aspx" />
     <Content Include="Web.config" />
     <Content Include="What-we.aspx" />
   </ItemGroup>
@@ -2334,12 +2336,26 @@
     <Compile Include="SearchLawyer.aspx.designer.cs">
       <DependentUpon>SearchLawyer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserFeedback.aspx.cs">
+      <DependentUpon>UserFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserFeedback.aspx.designer.cs">
+      <DependentUpon>UserFeedback.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserRegistration.aspx.cs">
       <DependentUpon>UserRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserRegistration.aspx.designer.cs">
       <DependentUpon>UserRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRequirement.aspx.cs">
+      <DependentUpon>UserRequirement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRequirement.aspx.designer.cs">
+      <DependentUpon>UserRequirement.aspx</DependentUpon>
     </Compile>
     <Compile Include="What-we.aspx.cs">
       <DependentUpon>What-we.aspx</DependentUpon>
