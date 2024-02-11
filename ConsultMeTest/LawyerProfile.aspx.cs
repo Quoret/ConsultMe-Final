@@ -46,7 +46,7 @@ namespace ConsultMeTest
                     con.Open();
                 }
 
-                string query = "INSERT INTO LawyerAdditionalInfo (LawyerID,University,State,District,IsBarMember,Achievements,AreaOfExperties,YearsOfExperience,Education,IsTrialLawyer,Language,Contact,FirmName,Availability,Address,CaseCount,CaseWon,AvailableDate) VALUES (@LawyerID,@University,@State,@District,@IsBarMember,@Achievements,@AreaOfExperties,@YearsOfExperience,@Education,@IsTrialLawyer,@Language,@Contact,@FirmName,@Availability,@Address,@CaseCount,@CaseWon,@AvailableDate)";
+                string query = "INSERT INTO LawyerAdditionalInfo (LawyerID,University,State,District,IsBarMember,Achievements,AreaOfExperties,YearsOfExperience,Education,IsTrialLawyer,Language,Contact,FirmName,Availability,Address,CaseCount,ConsultingFee,AvailableDate) VALUES (@LawyerID,@University,@State,@District,@IsBarMember,@Achievements,@AreaOfExperties,@YearsOfExperience,@Education,@IsTrialLawyer,@Language,@Contact,@FirmName,@Availability,@Address,@CaseCount,@ConsultingFee,@AvailableDate)";
                 SqlCommand cmd = new SqlCommand(query, con);
                 if (!string.IsNullOrEmpty(Session["LawyerId"] as string))
                 {
@@ -181,7 +181,7 @@ namespace ConsultMeTest
                     int lawyerId;
                     if (int.TryParse(Session["LawyerId"].ToString(), out lawyerId))
                     {
-                        string query = "UPDATE LawyerAdditionalInfo SET University = @University,State = @State, District = @District,   IsBarMember = @IsBarMember  ,  Achievements = @Achievements,    AreaOfExperties = @AreaOfExperties,     YearsOfExperience = @YearsOfExperience,    Education = @Education,    IsTrialLawyer = @IsTrialLawyer,    Language = @Language,    Contact = @Contact,    FirmName = @FirmName,   Availability = @Availability,    Address = @Address,    CaseCount = @CaseCount,    CaseWon = @CaseWon,    AvailableDate = @AvailableDate WHERE LawyerID = " + lawyerId + "";
+                        string query = "UPDATE LawyerAdditionalInfo SET University = @University,State = @State, District = @District,   IsBarMember = @IsBarMember  ,  Achievements = @Achievements,    AreaOfExperties = @AreaOfExperties,     YearsOfExperience = @YearsOfExperience,    Education = @Education,    IsTrialLawyer = @IsTrialLawyer,    Language = @Language,    Contact = @Contact,    FirmName = @FirmName,   Availability = @Availability,    Address = @Address,    CaseCount = @CaseCount,    ConsultingFee = @ConsultingFee,    AvailableDate = @AvailableDate WHERE LawyerID = " + lawyerId + "";
                         SqlCommand cmd = new SqlCommand(query, con);
                         cmd.Parameters.AddWithValue("@University", University.SelectedItem.Value);//1
                         cmd.Parameters.AddWithValue("@State", StateDropdown.SelectedItem.Value);//2 
