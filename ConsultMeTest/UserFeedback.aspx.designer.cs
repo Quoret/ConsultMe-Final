@@ -15,6 +15,24 @@ namespace ConsultMeTest
     {
 
         /// <summary>
+        /// hidLawyerID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidLawyerID;
+
+        /// <summary>
+        /// hidClientID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidClientID;
+
+        /// <summary>
         /// CommunicationSkills control.
         /// </summary>
         /// <remarks>

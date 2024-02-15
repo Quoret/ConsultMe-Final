@@ -46,6 +46,8 @@ namespace ConsultMeTest
                     con.Open();
                 }
 
+
+                string query_SearchLawyer = "INSERT INTO SearchLawyerGridView(LawyerID,LawyerFullname,AreaOfExperties,Contact,District,CaseCount,AvailableDate)VALUES(@LawyerID,@LawyerFullname,@AreaOfExperties,@Contact,@District,@CaseCount,@AvailableDate)";
                 string query = "INSERT INTO LawyerAdditionalInfo (LawyerID,University,State,District,IsBarMember,Achievements,AreaOfExperties,YearsOfExperience,Education,IsTrialLawyer,Language,Contact,FirmName,Availability,Address,CaseCount,ConsultingFee,AvailableDate) VALUES (@LawyerID,@University,@State,@District,@IsBarMember,@Achievements,@AreaOfExperties,@YearsOfExperience,@Education,@IsTrialLawyer,@Language,@Contact,@FirmName,@Availability,@Address,@CaseCount,@ConsultingFee,@AvailableDate)";
                 SqlCommand cmd = new SqlCommand(query, con);
                 if (!string.IsNullOrEmpty(Session["LawyerId"] as string))
@@ -78,6 +80,33 @@ namespace ConsultMeTest
                 cmd.Parameters.AddWithValue("@AvailableDate", Available_date.Text.Trim());//17
                 cmd.ExecuteNonQuery();
                 con.Close();
+
+
+                if(con.State==ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmmd = new SqlCommand(query_SearchLawyer, con);
+                if (!string.IsNullOrEmpty(Session["LawyerId"] as string))
+                {
+                    string lawyer_Fullname = Session["firstname"].ToString();
+                    cmmd.Parameters.AddWithValue("@LawyerFullname", lawyer_Fullname);
+                    int lawyerId;
+                    if (int.TryParse(Session["LawyerId"].ToString(), out lawyerId))
+                    {
+                        cmmd.Parameters.AddWithValue("@LawyerID", lawyerId);
+                    }
+                }
+                cmmd.Parameters.AddWithValue("@AreaOfExperties", Catagory.SelectedItem.Value);
+                cmmd.Parameters.AddWithValue("@District", DistrictDropdown.SelectedItem.Value);
+                cmmd.Parameters.AddWithValue("@Contact", Contact_Num.Text.Trim());
+                cmmd.Parameters.AddWithValue("@CaseCount", Case_count.Text.Trim());
+                cmmd.Parameters.AddWithValue("@AvailableDate", Available_date.Text.Trim());
+                cmmd.ExecuteNonQuery();
+                con.Close();
+
+
+
                 Response.Write("<script>alert('Profile submitted Successfully');</script>");
             }
             catch (Exception ex)
@@ -202,9 +231,40 @@ namespace ConsultMeTest
                         cmd.Parameters.AddWithValue("@AvailableDate", Available_date.Text.Trim());//17
                         cmd.ExecuteNonQuery();
                         con.Close();
-                        Response.Write("<script>alert('Profile Updated Successfully');</script>");
                     }
                 }
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                if (!string.IsNullOrEmpty(Session["LawyerId"] as string))
+                {
+                    int lawyerId;
+                    if (int.TryParse(Session["LawyerId"].ToString(), out lawyerId))
+                    {
+                        string Query_update_searchLawyer = "UPDATE SearchLawyerGridView SET AreaOfExperties=@AreaOfExperties,Contact=@Contact ,District=@District,CaseCount=@CaseCount,AvailableDate=@AvailableDate WHERE LawyerID='"+lawyerId+"' ";
+                        SqlCommand cmmd=new SqlCommand(Query_update_searchLawyer, con);
+                        cmmd.Parameters.AddWithValue("@District", DistrictDropdown.SelectedItem.Value);
+                        cmmd.Parameters.AddWithValue("@AreaOfExperties", Catagory.SelectedItem.Value);//6
+                        cmmd.Parameters.AddWithValue("@CaseCount", Case_count.Text.Trim());//15
+                        cmmd.Parameters.AddWithValue("@Contact", Contact_Num.Text.Trim());//11
+                        cmmd.Parameters.AddWithValue("@AvailableDate", Available_date.Text.Trim());//17
+
+                        cmmd.ExecuteNonQuery();
+                        con.Close ();
+
+                    }
+
+
+
+
+
+
+
+                    Response.Write("<script>alert('Profile Updated Successfully');</script>");
+                }
+                
             }
             catch (Exception ex)
             {
