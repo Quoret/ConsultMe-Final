@@ -33,13 +33,22 @@ namespace ConsultMeTest
         protected global::System.Web.UI.WebControls.HiddenField hidClientID;
 
         /// <summary>
-        /// CommunicationSkills control.
+        /// CommunicationAvailability control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CommunicationSkills;
+        protected global::System.Web.UI.WebControls.DropDownList CommunicationAvailability;
+
+        /// <summary>
+        /// CommunicationSkillsz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CommunicationSkillsz;
 
         /// <summary>
         /// Experties control.
@@ -51,13 +60,13 @@ namespace ConsultMeTest
         protected global::System.Web.UI.WebControls.DropDownList Experties;
 
         /// <summary>
-        /// Professionalism control.
+        /// TimeFlexibility control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Professionalism;
+        protected global::System.Web.UI.WebControls.DropDownList TimeFlexibility;
 
         /// <summary>
         /// Morality control.
@@ -69,6 +78,15 @@ namespace ConsultMeTest
         protected global::System.Web.UI.WebControls.DropDownList Morality;
 
         /// <summary>
+        /// TimeInvestment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList TimeInvestment;
+
+        /// <summary>
         /// CaseManagement control.
         /// </summary>
         /// <remarks>
@@ -78,13 +96,31 @@ namespace ConsultMeTest
         protected global::System.Web.UI.WebControls.DropDownList CaseManagement;
 
         /// <summary>
-        /// ClientSatisfaction control.
+        /// Strategy1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ClientSatisfaction;
+        protected global::System.Web.UI.WebControls.DropDownList Strategy1;
+
+        /// <summary>
+        /// PriceCharged control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList PriceCharged;
+
+        /// <summary>
+        /// Experience1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Experience1;
 
         /// <summary>
         /// Submit_feedback control.

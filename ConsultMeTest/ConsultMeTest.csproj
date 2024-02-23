@@ -2175,6 +2175,7 @@
     <Content Include="Homepage.aspx" />
     <Content Include="images\about-img.png" />
     <Content Include="images\banner-bg.png" />
+    <Content Include="images\banner-img-edited.png" />
     <Content Include="images\banner-img.png" />
     <Content Include="images\blog-img.png" />
     <Content Include="images\contact-img.png" />
@@ -2195,6 +2196,7 @@
     <Content Include="images\img-7.png" />
     <Content Include="images\img-8.png" />
     <Content Include="images\img-9.png" />
+    <Content Include="images\lawyer-in-the-office-square-edited.png" />
     <Content Include="images\lawyer-in-the-office-square.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\man-5806011_1280.jpg" />
@@ -2221,12 +2223,15 @@
     <Content Include="js\slider-setting.js" />
     <Content Include="Lawyerlogin.aspx" />
     <Content Include="LawyerProfile.aspx" />
+    <Content Include="LawyerRecommender.aspx" />
     <Content Include="LawyerRegistration.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Readmore1.aspx" />
     <Content Include="Readmore2.aspx" />
     <Content Include="Readmore3.aspx" />
     <Content Include="SearchLawyer.aspx" />
+    <Content Include="SimilarLawyer.aspx" />
+    <Content Include="SimilarLawyerRecommender.aspx" />
     <Content Include="Styles\style.css" />
     <Content Include="Styles\style2.css" />
     <Content Include="Styles\style3.css" />
@@ -2293,6 +2298,13 @@
     <Compile Include="LawyerProfile.aspx.designer.cs">
       <DependentUpon>LawyerProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LawyerRecommender.aspx.cs">
+      <DependentUpon>LawyerRecommender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LawyerRecommender.aspx.designer.cs">
+      <DependentUpon>LawyerRecommender.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LawyerRegistration.aspx.cs">
       <DependentUpon>LawyerRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2335,6 +2347,20 @@
     </Compile>
     <Compile Include="SearchLawyer.aspx.designer.cs">
       <DependentUpon>SearchLawyer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SimilarLawyer.aspx.cs">
+      <DependentUpon>SimilarLawyer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimilarLawyer.aspx.designer.cs">
+      <DependentUpon>SimilarLawyer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SimilarLawyerRecommender.aspx.cs">
+      <DependentUpon>SimilarLawyerRecommender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimilarLawyerRecommender.aspx.designer.cs">
+      <DependentUpon>SimilarLawyerRecommender.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserFeedback.aspx.cs">
       <DependentUpon>UserFeedback.aspx</DependentUpon>

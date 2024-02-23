@@ -67,7 +67,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="banner_img">
-                                    <img src="images/banner-img.png">
+                                    <img src="images/banner-img-edited.png" />
+                                    
                                 </div>
                             </div>
                         </div>
@@ -101,7 +102,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="banner_img3">
-                                    <img src="images/lawyer-in-the-office-square.jpg">
+                                    <img src="images/lawyer-in-the-office-square.jpg" />
                                 </div>
                             </div>
                         </div>
@@ -134,14 +135,14 @@
                     </div>
                     <div class="col-md-4">
                         <br />
-                        <asp:LinkButton ID="SimilarLawyer" runat="server" CssClass="search-button">
+                        <asp:LinkButton ID="SimilarLawyer" runat="server" CssClass="search-button" OnClick="SimilarLawyer_Click">
                             <span class="upper-text">Find similar</span><br />
                             <span class="larger-text">Lawyer</span>
                         </asp:LinkButton>
                     </div>
                     <div class="col-md-4">
                         <br />
-                        <asp:LinkButton ID="SearchRequirement" runat="server" CssClass="search-button">
+                        <asp:LinkButton ID="SearchRequirement" runat="server" CssClass="search-button" OnClick="SearchRequirement_Click1">
                             <span class="upper-text">Search based on</span><br />
                             <span class="larger-text">Requirement</span>
                         </asp:LinkButton>

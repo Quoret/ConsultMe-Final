@@ -7,6 +7,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
+using System.Net.Mail;
+using System.Web.Configuration;
 
 namespace ConsultMeTest
 {
@@ -26,9 +29,19 @@ namespace ConsultMeTest
             }
             else
             {
+                
                 if (checkPasswordMatch())
                 {
-                    newLawyerSignUp();
+                    if(IsthePasswordValid(L_conPassword.Text.Trim()))
+                    {
+                        newLawyerSignUp();
+                        Response.Redirect("Lawyerlogin.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Password must include atleast on Capital letter and special character and minimum length 8');</script>");
+                    }
+                    
                 }
                 else
                 {
@@ -41,6 +54,11 @@ namespace ConsultMeTest
         {
             try
             {
+                if (!IsValidEmail(L_Email.Text.Trim()))
+                {
+                    Response.Write("<script>alert('Invalid email address');</script>");
+                    return;
+                }
                 SqlConnection con = new SqlConnection(strcon);
                 if (con.State == ConnectionState.Closed)
                 {
@@ -111,6 +129,37 @@ namespace ConsultMeTest
                 return false;
             }
 
+        }
+        bool IsthePasswordValid(string password)
+        {
+            string pattern = @"^(?=.*[!@#$%^&*()])(?=.*[A-Z])(?=.*\d).{8,}$";
+
+            return Regex.IsMatch(password, pattern);
+        }
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Address == email && IsValidDomain(addr.Host);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        bool IsValidDomain(string domain)
+        {
+            try
+            {
+                var result = System.Net.Dns.GetHostEntry(domain);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -42,7 +42,7 @@
             background-color: #f4f4f4;
             color: #333;
             border-bottom: 1px solid #ddd;
-            width: 200px;
+            width: 280px;
             height: 40px;
         }
 
@@ -64,6 +64,11 @@
             width: 426px;
             height: 40px;
         }
+        .agaadi-lyauni{
+            text-align:left;
+            font-weight:bold;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -76,77 +81,211 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h4 class="larger-text">User Feedback Form</h4>
+                                    <h4 class="larger-text">Enter Your Requirement</h4>
+           
                                 </center>
                             </div>
                         </div>
                         <hr />
-
+                        <div class="row mx-auto">
+                            <div class="col-md-12">     
+                                <label class="agaadi-lyauni">Area of Experties</label>
+                                <div class="form-group">
+                                    <asp:DropDownList class="custom-dropdown" ID="LawyerCatagory" runat="server">
+                                        <asp:ListItem Text="Select" Value="Select" />
+                                        <asp:ListItem Text="Criminal Law" Value="Criminal Law" />
+                                        <asp:ListItem Text="Civil Law" Value="Civil Law" />
+                                        <asp:ListItem Text="Family Law" Value="Family Law" />
+                                        <asp:ListItem Text="Corporate Law" Value="Corporate Law" />
+                                        <asp:ListItem Text="Real Estate Law" Value="Real Estate Law" />
+                                        <asp:ListItem Text="Immigration Law" Value="Immigration Law" />
+                                        <asp:ListItem Text="Intellectual Property Law" Value="Intellectual Property Law" />
+                                        <asp:ListItem Text="Environmental Law" Value="Environmental Law" />
+                                        <asp:ListItem Text="Tax Law" Value="Tax Law" />
+                                        <asp:ListItem Text="Employment Law" Value="Employment Law" />
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
                         <!-- university,state,district-->
+<!------------------------------------------------------------------------------------------------------------------------------------->
+
                         <div class="row mx-auto">
-                            <div class="col-md-4">
-                                <label style="font-weight: bold">Are of Experties of Lawyer?</label>
+                            <div class="col-md-6">
+                                <label style="font-weight: bold">How often would you need to communicate with your lawyer?</label>
                                 <div class="form-group">
-                                    <asp:DropDownList class="custom-dropdown" ID="AreaOfExperties" runat="server">
+                                    <asp:DropDownList class="custom-dropdown" ID="communicationBetween2" runat="server">
+                                        <asp:ListItem Text="Select" Value="Select" />
+                                        <asp:ListItem Text="Several times a day" Value="Excellent" />
+                                        <asp:ListItem Text="Multiple times a week" Value="Very Good" />
+                                        <asp:ListItem Text="Once or twice a week" Value="Good" />
+                                        <asp:ListItem Text="Several times a month" Value="Fair" />
+                                        <asp:ListItem Text="Once a month or less" Value="Poor" />
                                     </asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <label style="font-weight: bold">Availability</label>
+                            <div class="col-md-6">
+                                <label style="font-weight: bold">How much lawyer-judge communication does your case require?</label>
                                 <div class="form-group">
-                                    <asp:DropDownList class="custom-dropdown" ID="Availability" runat="server">
+                                    <asp:DropDownList class="custom-dropdown" ID="CommunicationBetween" runat="server">
+                                        <asp:ListItem Text="Select" Value="Select" />
+                                        <asp:ListItem Text="Excellent" Value="Excellent" />
+                                        <asp:ListItem Text="Very Good" Value="Very Good" />
+                                        <asp:ListItem Text="Good" Value="Good" />
+                                        <asp:ListItem Text="Fair" Value="Fair" />
+                                        <asp:ListItem Text="Poor" Value="Poor" />
                                     </asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <label style="font-weight: bold">Available Date</label>
+                            </div>
+                           <br />
+ <!------------------------------------------------------------------------------------------------------------------------------------->
+
+                            
+                       <div class="row mx-auto">
+                                <div class="col-md-6">
+                                    <label style="font-weight: bold">Legal problem complexity level</label>
+                                    <div class="form-group">
+                                        <asp:DropDownList class="custom-dropdown" ID="CaseDifficulty" runat="server">
+                                            <asp:ListItem Text="Select" Value="Select" />
+                                            <asp:ListItem Text="Excellent" Value="Excellent" />
+                                            <asp:ListItem Text="Very Good" Value="Very Good" />
+                                            <asp:ListItem Text="Good" Value="Good" />
+                                            <asp:ListItem Text="Fair" Value="Fair" />
+                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label style="font-weight: bold">How much time flexibility do you need?</label>
+                                    <div class="form-group">
+                                        <asp:DropDownList class="custom-dropdown" ID="TimeFLexibility" runat="server">
+                                            <asp:ListItem Text="Select" Value="Select" />
+                                            <asp:ListItem Text="Excellent" Value="Excellent" />
+                                            <asp:ListItem Text="Very Good" Value="Very Good" />
+                                            <asp:ListItem Text="Good" Value="Good" />
+                                            <asp:ListItem Text="Fair" Value="Fair" />
+                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
+                        <br />
+ <!------------------------------------------------------------------------------------------------------------------------------------->
+                            <div class="row mx-auto">
+                                <div class="col-md-6">
+                                    <label style="font-weight: bold">What is the type of help you require?</label>
+                                    <div class="form-group">
+                                        <asp:DropDownList class="custom-dropdown" ID="TypeOfHelp" runat="server">
+                                            <asp:ListItem Text="Select" Value="Select" />
+                                            <asp:ListItem Text="Excellent" Value="Excellent" />
+                                            <asp:ListItem Text="Very Good" Value="Very Good" />
+                                            <asp:ListItem Text="Good" Value="Good" />
+                                            <asp:ListItem Text="Fair" Value="Fair" />
+                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label style="font-weight: bold">How long do you want to hire the lawyer for?</label>
+                                    <div class="form-group">
+                                        <asp:DropDownList class="custom-dropdown" ID="TimeDuration" runat="server">
+                                            <asp:ListItem Text="Select" Value="Select" />
+                                            <asp:ListItem Text="Excellent" Value="Excellent" />
+                                            <asp:ListItem Text="Very Good" Value="Very Good" />
+                                            <asp:ListItem Text="Good" Value="Good" />
+                                            <asp:ListItem Text="Fair" Value="Fair" />
+                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
+                        <br />
+
+<!------------------------------------------------------------------------------------------------------------------------------------->
+                            <div class="row mx-auto">
+                                <div class="col-md-6">
+                                    <label style="font-weight: bold">How sensitive is your case to moral issues?</label>
+                                    <div class="form-group">
+                                        <asp:DropDownList class="custom-dropdown" ID="CaseSensitivity" runat="server">
+                                            <asp:ListItem Text="Select" Value="Select" />
+                                            <asp:ListItem Text="Excellent" Value="Excellent" />
+                                            <asp:ListItem Text="Very Good" Value="Very Good" />
+                                            <asp:ListItem Text="Good" Value="Good" />
+                                            <asp:ListItem Text="Fair" Value="Fair" />
+                                            <asp:ListItem Text="Poor" Value="Poor" />
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            <div class="col-md-6">
+                                <label style="font-weight: bold">Strategy creativity level of lawyer?</label>
                                 <div class="form-group">
-                                    <asp:DropDownList class="custom-dropdown" ID="AvailableDate" runat="server">
+                                    <asp:DropDownList class="custom-dropdown" ID="LawyerCreativity" runat="server">
+                                        <asp:ListItem Text="Select" Value="Select" />
+                                        <asp:ListItem Text="Excellent" Value="Excellent" />
+                                        <asp:ListItem Text="Very Good" Value="Very Good" />
+                                        <asp:ListItem Text="Good" Value="Good" />
+                                        <asp:ListItem Text="Fair" Value="Fair" />
+                                        <asp:ListItem Text="Poor" Value="Poor" />
                                     </asp:DropDownList>
                                 </div>
                             </div>
                         </div>
-
                         <br />
-                        <!-- catagoty,experience,education -->
+<!------------------------------------------------------------------------------------------------------------------------------------->
                         <div class="row mx-auto">
-                            <div class="col-md-4">
-                                <label style="font-weight: bold">Trial Lawyer?</label>
+                            <div class="col-md-6">
+                                <label style="font-weight: bold"> What range of cost do you expect?</label>
                                 <div class="form-group">
-                                    <asp:DropDownList class="custom-dropdown" ID="TrialLawyer" runat="server">
+                                    <asp:DropDownList class="custom-dropdown" ID="CostRange" runat="server">
+                                        <asp:ListItem Text="Select" Value="Select" />
+                                        <asp:ListItem Text="Excellent" Value="Excellent" />
+                                        <asp:ListItem Text="Very Good" Value="Very Good" />
+                                        <asp:ListItem Text="Good" Value="Good" />
+                                        <asp:ListItem Text="Fair" Value="Fair" />
+                                        <asp:ListItem Text="Poor" Value="Poor" />
                                     </asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <label style="font-weight: bold">Case Count</label>
-                                <asp:TextBox CssClass="form-control" ID="Case_count" runat="server" placeholder="Case Count" BackColor="White" BorderColor="Black" BorderStyle="Solid" TextMode="Number"></asp:TextBox>
-                            </div>
-                            <div class="col-md-4">
-                                <label style="font-weight: bold">Consulting Fee(per hour)</label>
-                                <asp:TextBox CssClass="form-control" ID="ConsultingFee" runat="server" placeholder="Amount" BackColor="White" BorderColor="Black" BorderStyle="Solid" TextMode="Number"></asp:TextBox>
+
+                            <div class="col-md-6">
+                                <label style="font-weight: bold">How much experience is necessary for you?</label>
+                                <div class="form-group">
+                                    <asp:DropDownList class="custom-dropdown" ID="Experience" runat="server">
+                                        <asp:ListItem Text="Select" Value="Select" />
+                                        <asp:ListItem Text="Very Highly necessary" Value="Excellent" />
+                                        <asp:ListItem Text="Highly necessary" Value="Very Good" />
+                                        <asp:ListItem Text="Averagely necessary" Value="Good" />
+                                        <asp:ListItem Text="Not much necessary" Value="Fair" />
+                                        <asp:ListItem Text="Not necessary at all" Value="Poor" />
+                                    </asp:DropDownList>
+                                </div>
                             </div>
                         </div>
-                        <br />
+<!------------------------------------------------------------------------------------------------------------------------------------->
 
-                        <br />
+                <br />
+                <br />
 
-                        <!-- button-->
+                <!-- button-->
                         <div class="row mx-auto">
                             <div class="col">
                                 <br />
                                 <center>
                                     <div class="form-group">
-                                        <asp:LinkButton class="btn btn-info btn-block btn-lg" ID="Submit_feedback" runat="server">Submit</asp:LinkButton>
+                                        <asp:LinkButton class="btn btn-info btn-block btn-lg" ID="Submit_Requirement" runat="server" OnClick="Submit_requirement_Click">Submit</asp:LinkButton>
                                     </div>
                                 </center>
                             </div>
                         </div>
                     </div>
-                    <a href="Homepage.aspx"><< Back to Home</a><br>
+                    <a href="Homepage.aspx"><< Back </a>
+                    <br>
                     <br>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
     <br />
 </asp:Content>

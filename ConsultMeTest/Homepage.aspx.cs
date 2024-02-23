@@ -24,18 +24,6 @@ namespace ConsultMeTest
 
 
         }
-        
-        protected void Similar_lawyer_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        protected void SearchRequirement_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void SearchLawyer_Click(object sender, EventArgs e)
         {
             Response.Redirect("SearchLawyer.aspx");
@@ -44,6 +32,17 @@ namespace ConsultMeTest
         {
             // Check if the session variable "role" is set to "client"
             return Session["role"] != null && (string)Session["role"] == "client";
+        }
+
+        protected void SearchRequirement_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("UserRequirement.aspx");
+        }
+
+        protected void SimilarLawyer_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SimilarLawyer.aspx");
+
         }
     }
 

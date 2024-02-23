@@ -15,66 +15,111 @@ namespace ConsultMeTest
     {
 
         /// <summary>
-        /// AreaOfExperties control.
+        /// LawyerCatagory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AreaOfExperties;
+        protected global::System.Web.UI.WebControls.DropDownList LawyerCatagory;
 
         /// <summary>
-        /// Availability control.
+        /// communicationBetween2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Availability;
+        protected global::System.Web.UI.WebControls.DropDownList communicationBetween2;
 
         /// <summary>
-        /// AvailableDate control.
+        /// CommunicationBetween control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AvailableDate;
+        protected global::System.Web.UI.WebControls.DropDownList CommunicationBetween;
 
         /// <summary>
-        /// TrialLawyer control.
+        /// CaseDifficulty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TrialLawyer;
+        protected global::System.Web.UI.WebControls.DropDownList CaseDifficulty;
 
         /// <summary>
-        /// Case_count control.
+        /// TimeFLexibility control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Case_count;
+        protected global::System.Web.UI.WebControls.DropDownList TimeFLexibility;
 
         /// <summary>
-        /// ConsultingFee control.
+        /// TypeOfHelp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConsultingFee;
+        protected global::System.Web.UI.WebControls.DropDownList TypeOfHelp;
 
         /// <summary>
-        /// Submit_feedback control.
+        /// TimeDuration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Submit_feedback;
+        protected global::System.Web.UI.WebControls.DropDownList TimeDuration;
+
+        /// <summary>
+        /// CaseSensitivity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CaseSensitivity;
+
+        /// <summary>
+        /// LawyerCreativity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList LawyerCreativity;
+
+        /// <summary>
+        /// CostRange control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CostRange;
+
+        /// <summary>
+        /// Experience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Experience;
+
+        /// <summary>
+        /// Submit_Requirement control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Submit_Requirement;
     }
 }

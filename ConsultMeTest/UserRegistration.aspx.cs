@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -27,10 +28,20 @@ namespace ConsultMeTest
             }
             else 
             {
+                
                 if(checkPasswordMatch())
                 {
-                    newUserSignUp();
-                    Response.Redirect("login.aspx");
+                    if (IsthePasswordValid(U_conPassword.Text.Trim()))
+                    {
+                        newUserSignUp();
+                        Response.Redirect("login.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Password must include atleast on Capital letter and special character and minimum length 8');</script>");
+
+                    }
+
                 }
                 else
                 {
@@ -111,6 +122,11 @@ namespace ConsultMeTest
             }
             
         }
-         
+        bool IsthePasswordValid(string password)
+        {
+            string pattern = @"^(?=.*[!@#$%^&*()])(?=.*[A-Z])(?=.*\d).{8,}$";
+
+            return Regex.IsMatch(password, pattern);
+        }
     }
 }

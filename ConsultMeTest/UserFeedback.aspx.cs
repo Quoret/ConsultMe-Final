@@ -47,85 +47,125 @@ namespace ConsultMeTest
         {
             string lawyer_id = hidLawyerID.Value;
             string client_id = hidClientID.Value;
-
-            string communication_skills = CommunicationSkills.SelectedItem.Value;
+            string communication_availability = CommunicationAvailability.SelectedItem.Value;
+            string communication_skills = CommunicationSkillsz.SelectedItem.Value;
             string experties = Experties.SelectedItem.Value;
-            string professionalism = Professionalism.SelectedItem.Value;
+            string time_flexibility = TimeFlexibility.SelectedItem.Value;
             string morality = Morality.SelectedItem.Value;
+            string time_investment = TimeInvestment.SelectedItem.Value;
             string case_management = CaseManagement.SelectedItem.Value;
-            string client_satisfaction = ClientSatisfaction.SelectedItem.Value;
+            string strategy = Strategy1.SelectedItem.Value;
+            string price_charged = PriceCharged.SelectedItem.Value;
+            string experience = Experience1.SelectedItem.Value;
 
-            int communicationSkillRating = MapToNumericRating(communication_skills);
-            int expertiesRating = MapToNumericRating(experties);
-            int professionalismRating = MapToNumericRating(professionalism);
-            int moralityRating = MapToNumericRating(morality);
-            int caseManagementRating = MapToNumericRating(case_management);
-            int clientSatisfactionRating = MapToNumericRating(client_satisfaction);
-            try
+            if (communication_availability == "Select" || communication_skills == "Select" || experties == "Select" || time_flexibility == "Select" || morality == "Select" || time_investment == "Select" || case_management == "Select" || strategy == "Select" || price_charged == "Select" || experience == "Select")
             {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
+                Response.Write("<script>alert('Please Select the appropriate Field');</script>");
+            }
+            else
+            {
+                int communicationAvailabilityRating = MapToNumericRating(communication_availability);
+                int communicationSkillRating = MapToNumericRating(communication_skills);
+                int expertiesRating = MapToNumericRating(experties);
+                int flexibilityRating = MapToNumericRating(time_flexibility);
+                int moralityRating = MapToNumericRating(morality);
+                int timeInvestmentRating = MapToNumericRating(time_investment);
+                int caseManagementRating = MapToNumericRating(case_management);
+                int strategyRating = MapToNumericRating(strategy);
+                int priceChargedRating = MapToNumericRating(price_charged);
+                int experienceRating = MapToNumericRating(experience);
+                try
                 {
-                    con.Open();
+                    SqlConnection con = new SqlConnection(strcon);
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    SqlCommand cmd = new SqlCommand("INSERT INTO ClientFeedback (ClientID,LawyerID,CommunicationAvailability,CommunicationSkills,Experties,TimeFlexibility,Morality,TimeInvestment,CaseManagement,Strategy,PriceCharged,Experience) VALUES (@ClientID,@LawyerID,@CommunicationAvailability,@CommunicationSkills,@Experties,@TimeFlexibility,@Morality,@TimeInvestment,@CaseManagement,@Strategy,@PriceCharged,@Experience) ", con);
+                    cmd.Parameters.AddWithValue("@ClientID", client_id);
+                    cmd.Parameters.AddWithValue("@LawyerID", lawyer_id);
+                    cmd.Parameters.AddWithValue("@CommunicationAvailability", communicationAvailabilityRating);
+                    cmd.Parameters.AddWithValue("@CommunicationSkills", communicationSkillRating);
+                    cmd.Parameters.AddWithValue("@Experties", expertiesRating);
+                    cmd.Parameters.AddWithValue("@TimeFlexibility", flexibilityRating);
+                    cmd.Parameters.AddWithValue("@Morality", moralityRating);
+                    cmd.Parameters.AddWithValue("@TimeInvestment", timeInvestmentRating);
+                    cmd.Parameters.AddWithValue("@CaseManagement", caseManagementRating);
+                    cmd.Parameters.AddWithValue("@Strategy", strategyRating);
+                    cmd.Parameters.AddWithValue("@PriceCharged", priceChargedRating);
+                    cmd.Parameters.AddWithValue("@Experience", experienceRating);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Response.Write("<script>alert('Feedback Submitted Sucessfully');</script>");
                 }
-                SqlCommand cmd = new SqlCommand("INSERT INTO ClientFeedback (ClientID,LawyerID,CommunicationSkill,Experties,Professionalism,Morality,CaseManagement,ClientSatisfaction) VALUES (@ClientID,@LawyerID,@CommunicationSkill,@Experties,@Professionalism,@Morality,@CaseManagement,@ClientSatisfaction) ", con);
-                cmd.Parameters.AddWithValue("@ClientID", client_id);
-                cmd.Parameters.AddWithValue("@LawyerID", lawyer_id);
-                cmd.Parameters.AddWithValue("@CommunicationSkill", communicationSkillRating);
-                cmd.Parameters.AddWithValue("@Experties", expertiesRating);
-                cmd.Parameters.AddWithValue("@Professionalism", professionalismRating);
-                cmd.Parameters.AddWithValue("@Morality", moralityRating);
-                cmd.Parameters.AddWithValue("@CaseManagement", caseManagementRating);
-                cmd.Parameters.AddWithValue("@ClientSatisfaction", clientSatisfactionRating);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Response.Write("<script>alert('Feedback Submitted Sucessfully');</script>");
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
             }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
+
+
+            
         }
         void submitUpdatedFeedback()
         {
             string lawyer_id = hidLawyerID.Value;
             string client_id = hidClientID.Value;
 
-            string communication_skills = CommunicationSkills.SelectedItem.Value;
+            string communication_availability = CommunicationAvailability.SelectedItem.Value;
+            string communication_skills = CommunicationSkillsz.SelectedItem.Value;
             string experties = Experties.SelectedItem.Value;
-            string professionalism = Professionalism.SelectedItem.Value;
+            string time_flexibility = TimeFlexibility.SelectedItem.Value;
             string morality = Morality.SelectedItem.Value;
+            string time_investment = TimeInvestment.SelectedItem.Value;
             string case_management = CaseManagement.SelectedItem.Value;
-            string client_satisfaction = ClientSatisfaction.SelectedItem.Value;
+            string strategy = Strategy1.SelectedItem.Value;
+            string price_charged = PriceCharged.SelectedItem.Value;
+            string experience = Experience1.SelectedItem.Value;
 
-            int communicationSkillRating = MapToNumericRating(communication_skills);
-            int expertiesRating = MapToNumericRating(experties);
-            int professionalismRating = MapToNumericRating(professionalism);
-            int moralityRating = MapToNumericRating(morality);
-            int caseManagementRating = MapToNumericRating(case_management);
-            int clientSatisfactionRating = MapToNumericRating(client_satisfaction);
-            try
+            if (communication_availability == "Select" || communication_skills == "Select" || experties == "Select" || time_flexibility == "Select" || morality == "Select" || time_investment == "Select" || case_management == "Select" || strategy == "Select" || price_charged == "Select" || experience == "Select")
             {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
+                Response.Write("<script>alert('Please Select the appropriate Field');</script>");
+            }
+            else
+            {
+                int communicationAvailabilityRating = MapToNumericRating(communication_availability);
+                int communicationSkillRating = MapToNumericRating(communication_skills);
+                int expertiesRating = MapToNumericRating(experties);
+                int flexibilityRating = MapToNumericRating(time_flexibility);
+                int moralityRating = MapToNumericRating(morality);
+                int timeInvestmentRating = MapToNumericRating(time_investment);
+                int caseManagementRating = MapToNumericRating(case_management);
+                int strategyRating = MapToNumericRating(strategy);
+                int priceChargedRating = MapToNumericRating(price_charged);
+                int experienceRating = MapToNumericRating(experience);
+                try
                 {
-                    con.Open();
+                    SqlConnection con = new SqlConnection(strcon);
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    SqlCommand cmd = new SqlCommand("UPDATE ClientFeedback SET CommunicationAvailability=@CommunicationAvailability,CommunicationSkills=@CommunicationSkills,Experties=@Experties,TimeFlexibility=@TimeFlexibility,Morality=@Morality,TimeInvestment=@TimeInvestment,CaseManagement=@CaseManagement,Strategy=@Strategy,PriceCharged=@PriceCharged,Experience=@Experience WHERE LawyerID='" + lawyer_id + "'", con);
+                    cmd.Parameters.AddWithValue("@CommunicationAvailability", communicationAvailabilityRating);
+                    cmd.Parameters.AddWithValue("@CommunicationSkills", communicationSkillRating);
+                    cmd.Parameters.AddWithValue("@Experties", expertiesRating);
+                    cmd.Parameters.AddWithValue("@TimeFlexibility", flexibilityRating);
+                    cmd.Parameters.AddWithValue("@Morality", moralityRating);
+                    cmd.Parameters.AddWithValue("@TimeInvestment", timeInvestmentRating);
+                    cmd.Parameters.AddWithValue("@CaseManagement", caseManagementRating);
+                    cmd.Parameters.AddWithValue("@Strategy", strategyRating);
+                    cmd.Parameters.AddWithValue("@PriceCharged", priceChargedRating);
+                    cmd.Parameters.AddWithValue("@Experience", experienceRating);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Response.Write("<script>alert('Feedback Submitted Successfully');</script>");
                 }
-                SqlCommand cmd = new SqlCommand("UPDATE ClientFeedback SET CommunicationSkill=@CommunicationSkill,Experties=@Experties,Professionalism=@Professionalism,Morality=@Morality,CaseManagement=@CaseManagement,ClientSatisfaction=@ClientSatisfaction WHERE LawyerID='"+lawyer_id+"'", con);
-                cmd.Parameters.AddWithValue("@CommunicationSkill", communicationSkillRating);
-                cmd.Parameters.AddWithValue("@Experties", expertiesRating);
-                cmd.Parameters.AddWithValue("@Professionalism", professionalismRating);
-                cmd.Parameters.AddWithValue("@Morality", moralityRating);
-                cmd.Parameters.AddWithValue("@CaseManagement", caseManagementRating);
-                cmd.Parameters.AddWithValue("@ClientSatisfaction", clientSatisfactionRating);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Response.Write("<script>alert('Feedback Submitted Sucessfully');</script>");
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + ex.Message + "');</script>");
+                }
+            }      
         }
 
         private int MapToNumericRating(string feedbackStatus)
@@ -156,7 +196,8 @@ namespace ConsultMeTest
         }
         bool checkLawyerExists()
         {
-            string lawyer_id=hidLawyerID.Value;
+            string lawyer_id = hidLawyerID.Value;
+            string cliend_id = hidClientID.Value;
             try
             {
                 string check;
@@ -165,7 +206,7 @@ namespace ConsultMeTest
                 {
                     con.Open();
                 }
-                check = "SELECT * FROM ClientFeedback WHERE LawyerID='" + lawyer_id + "' ";
+                check = "SELECT * FROM ClientFeedback WHERE LawyerID='" + lawyer_id + "' AND ClientID='" + cliend_id + "'";
                 SqlCommand cmd = new SqlCommand(check, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
